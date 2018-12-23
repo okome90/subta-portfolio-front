@@ -32,4 +32,12 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      
+      - deploy:
+          name: deploy master to heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            fi
+
 
