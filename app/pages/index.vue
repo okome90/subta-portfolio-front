@@ -1,27 +1,25 @@
 <template>
-  <section class="container">
+  <div>
     <div class="main-header">
       <main-header/>
     </div>
-  </section>
+    <div class="profile">
+      <profile-container/>
+    </div>
+  </div>
 </template>
 
 <script>
 import MainHeader from '~/components/main_header/MainHeader.vue'
+import ProfileContainer from '~/components/profile/ProfileContainer.vue'
 
 export default {
   components: {
-    MainHeader
+    MainHeader,
+    ProfileContainer
   }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 </style>
